@@ -8,7 +8,7 @@ func main() {
 
 	// A switch statment example
 	// unlike other lanagues go's switch does not need the break statment
-	// It obky run the one case . it does not checkk all of them.
+	// It obky run the one case . it does not checkk all of them
 	switch z {
 	case 1:
 		fmt.Println("z is not equal to 1")
