@@ -17,25 +17,19 @@ func (animal Animal) AgeInHumanYears() {
 
 }
 
+// Pointers and functions
 // Try removing the pointer and observe what happens to the output
 // The pointer receiver copy the address of the object. If you remove
 // the pointer it will be a value receiver which copies the whole object
-// and pass in the AgeUp method.
-func (animal *Animal) AgeUp() {
+// and pass in the AgeUp function.
+func AgeUp(animal *Animal) {
 	animal.Age += 1
 }
-
-// From Go Tour Site
-// There are two reasons to use a pointer receiver.
-// The first is so that the method can modify the value that its receiver points to.
-// The second is to avoid copying the value on each method call. This can be more
-// efficient if the receiver is a large struct, for example.
-// In general, all methods on a given type should have either value or pointer receivers, but not a mixture of both.
 
 func main() {
 	myAnimal := Animal{1, "Berserker", "Dinosaur", 300}
 	myAnimal.AgeInHumanYears()
-	myAnimal.AgeUp()
+	AgeUp(&myAnimal)
 	myAnimal.AgeInHumanYears()
 
 }

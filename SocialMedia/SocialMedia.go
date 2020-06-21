@@ -3,6 +3,13 @@ package SocialMedia
 
 import "time"
 
+// go get golang.org/x/tools/cmd/stringer -- get the stringer package
+// go generate to get the stringer file
+// The below tells the stringer package that we want to generate a source file that
+// implements the string function for the mood state -- when we implement
+// string function for a type, can control how a type get printed out to the screen.
+// Go generate can do this for us
+
 //go:generate stringer -type=MoodState
 type MoodState int
 
