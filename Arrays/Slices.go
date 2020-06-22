@@ -5,7 +5,6 @@ import "fmt"
 // Slices get passed by refrence into Functions, meaning if you make changes
 // to a slice within a function, our changes will be reflected to the slice
 // that was passed into the function.
-
 func populateIntegerSlice(toPopulate []int) {
 
 	// We set values in a slice, just like we do with arrays using the square
