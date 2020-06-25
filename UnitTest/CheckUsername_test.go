@@ -13,7 +13,7 @@ import (
 // Notice all the function start with Test word at the begining
 func TestCheckUsernameSyntaxMinimumCharacterLength(t *testing.T) {
 
-	result := CheckUernameSyntax("")
+	result := CheckUsernameSyntax("")
 
 	if result != false {
 		t.Errorf("Failed the minimum character check")
@@ -21,7 +21,7 @@ func TestCheckUsernameSyntaxMinimumCharacterLength(t *testing.T) {
 }
 func TestCheckUsernameSyntaxMaximumCharacterLength(t *testing.T) {
 
-	result := CheckUernameSyntax("@AAABBBBCCCCDDDDE")
+	result := CheckUsernameSyntax("@AAABBBBCCCCDDDDE")
 
 	if result != false {
 		t.Errorf("Failed the maximun character check")
@@ -29,7 +29,7 @@ func TestCheckUsernameSyntaxMaximumCharacterLength(t *testing.T) {
 }
 func TestCheckUsernameSyntaxSymbols(t *testing.T) {
 
-	result := CheckUernameSyntax("@!#$%^&*_-+=~")
+	result := CheckUsernameSyntax("@!#$%^&*_-+=~")
 
 	if result != false {
 		t.Errorf("Failed the Special character check")
@@ -37,7 +37,7 @@ func TestCheckUsernameSyntaxSymbols(t *testing.T) {
 }
 func TestCheckUsernameSyntaxUnderscore(t *testing.T) {
 
-	result := CheckUernameSyntax("I_HOPE_IT_WORKS")
+	result := CheckUsernameSyntax("I_HOPE_IT_WORKS")
 
 	if result != true {
 		t.Errorf("Failed the check to allow underscore characters")
@@ -45,7 +45,7 @@ func TestCheckUsernameSyntaxUnderscore(t *testing.T) {
 }
 func TestCheckUsernameSyntaxAtSignInsideUsername(t *testing.T) {
 	// The @ sign should only be at the begining of the username and it should fail if it appear elsewhere.
-	result := CheckUernameSyntax("Going@It")
+	result := CheckUsernameSyntax("Going@It")
 
 	if result != false {
 		t.Errorf("Failed the @ sign check. The @ sign was found in another place besides the start of the string.")
@@ -54,7 +54,7 @@ func TestCheckUsernameSyntaxAtSignInsideUsername(t *testing.T) {
 func TestCheckUsernameSyntaxRandomUsernames(t *testing.T) {
 	for i := 0; i < 10008; i++ {
 		username := GenerateRandomUsername()
-		result := CheckUernameSyntax(username)
+		result := CheckUsernameSyntax(username)
 		if result != true {
 			t.Errorf("The random username, %v, failed to pass the username check.", username)
 			t.Fatal("Quitting")
